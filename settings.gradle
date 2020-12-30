@@ -1,3 +1,4 @@
+include ':lib_log_format'
 include ':lib_state_layout'
 include ':lib_sw'
 include ':app'
