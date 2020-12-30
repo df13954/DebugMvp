@@ -39,7 +39,7 @@ interface Deps {
     //annotations
     String annotations = 'androidx.annotation:annotation:1.1.0'
     //design
-    String design = 'com.google.android.material:material:1.3.0-alpha02'
+    String design = 'com.google.android.material:material:1.3.0-alpha04'
     //cardView
     String cardView = 'androidx.cardview:cardview:1.0.0'
     //recyclerView
@@ -51,7 +51,7 @@ interface Deps {
     //multiDex
     String multiDex = 'androidx.multidex:multidex:2.0.1'
     //coreKtx
-    String coreKtx = 'androidx.core:core-ktx:1.3.1'
+    String coreKtx = 'androidx.core:core-ktx:1.3.2'
 
     /*
      * room
@@ -118,7 +118,7 @@ interface Deps {
     String gson = 'com.google.code.gson:gson:2.8.6'
 
     //kotlinAndroidExtensions :插件
-    String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.4.10'
+    String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.4.21'
     //kotlinStdlib
     String kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
     //kotlinStdlibJdk7
@@ -126,11 +126,11 @@ interface Deps {
     //kotlinStdlibJdk8
     String kotlinStdlibJdk8 = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10'
     //kotlinXCoroutinesAndroid
-    String kotlinXCoroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+    String kotlinXCoroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
     //kotlinXCoroutinesCore
-    String kotlinXCoroutinesCore = 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
+    String kotlinXCoroutinesCore = 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
     //kotlinReflect
-    String kotlinReflect = 'org.jetbrains.kotlin:kotlin-reflect:1.3.71'
+    String kotlinReflect = 'org.jetbrains.kotlin:kotlin-reflect:1.4.21'
 
     /*
      * 模块化框架
@@ -144,7 +144,7 @@ interface Deps {
      * 网络
      */
     //okHttp3 : https://github.com/square/okhttp
-    String okHttp3 = 'com.squareup.okhttp3:okhttp:4.0.0'
+    String okHttp3 = 'com.squareup.okhttp3:okhttp:4.7.2'
     //okHttp3LoggingInterceptor
     String okHttp3LoggingInterceptor = 'com.squareup.okhttp3:logging-interceptor:4.0.0'
 
@@ -152,7 +152,7 @@ interface Deps {
      * retrofit2
      */
     //retrofit2 : https://github.com/square/retrofit
-    String retrofit2 = 'com.squareup.retrofit2:retrofit:2.6.0'
+    String retrofit2 = 'com.squareup.retrofit2:retrofit:2.9.0'
     //retrofit2ConverterGson
     String retrofit2ConverterGson = 'com.squareup.retrofit2:converter-gson:2.6.0'
     //retrofit2ConverterScalars
@@ -178,9 +178,9 @@ interface Deps {
     String picasso = 'com.squareup.picasso:picasso:2.71828'
 
     //glideV4 : https://github.com/bumptech/glide
-    String glideV4 = 'com.github.bumptech.glide:glide:4.9.0'
+    String glideV4 = 'com.github.bumptech.glide:glide:4.11.0'
     //glideV4Compiler
-    String glideV4Compiler = 'com.github.bumptech.glide:compiler:4.9.0'
+    String glideV4Compiler = 'com.github.bumptech.glide:compiler:4.11.0'
 
     /*
      * 事件总线
@@ -217,7 +217,7 @@ interface Deps {
     //viewPagerTransforms
     String viewPagerTransforms = 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     //circleImageView : https://github.com/hdodenhof/CircleImageView
-    String circleImageView = 'de.hdodenhof:circleimageview:3.0.1'
+    String circleImageView = 'de.hdodenhof:circleimageview:3.1.0'
     //roundedImageView :圆角图片 https://github.com/vinc3m1/RoundedImageView
     String roundedImageView = 'com.makeramen:roundedimageview:2.3.0'
     //lRecyclerView
@@ -229,7 +229,7 @@ interface Deps {
     //androidPickerView : 时间,地址选择器 https://github.com/Bigkoo/Android-PickerView
     String androidPickerView = 'com.contrarywind:Android-PickerView:4.1.9'
     //baseRecyclerViewAdapterHelper : recycleView相关 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
-    String baseRecyclerViewAdapterHelper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    String baseRecyclerViewAdapterHelper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     //numberPickerView : https://github.com/Carbs0126/NumberPickerView
     String numberPickerView = 'n.carbswang.android:NumberPickerView:1.1.1'
     //swipeBackLayout :侧滑退出 https://github.com/ikew0ng/SwipeBackLayout
@@ -262,15 +262,8 @@ interface Deps {
     /*
      * 实用
      */
-    //butterKnife : https://github.com/JakeWharton/butterknife
-    String butterKnife = 'com.jakewharton:butterknife:8.8.1'
-    //butterKnifeCompiler
-    String butterKnifeCompiler = 'com.jakewharton:butterknife-compiler:8.8.1'
-    //butterKnifeGradlePlugin
-    String butterKnifeGradlePlugin = 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
-
     //rxJava2 : https://github.com/ReactiveX/RxJava
-    String rxJava2 = 'io.reactivex.rxjava2:rxjava:2.2.12'
+    String rxJava2 = 'io.reactivex.rxjava2:rxjava:2.2.19'
     //rxAndroid
     String rxAndroid = 'io.reactivex:rxandroid:1.0.1'
     //rxAndroid2
@@ -307,7 +300,7 @@ interface Deps {
     //greenDao
     String greenDao = 'de.greenrobot:greendao:2.0.0'
     //mmkv : 基于mmap的高性能通用key-value组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
-    String mmkv = 'com.tencent:mmkv-static:1.2.2'
+    String mmkv = 'com.tencent:mmkv-static:1.2.6'
 
     //javaxAnnotation
     String javaxAnnotation = 'org.glassfish:javax.annotation:10.0-b28'
