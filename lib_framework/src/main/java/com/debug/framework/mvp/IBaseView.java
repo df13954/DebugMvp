@@ -1,4 +1,4 @@
-package com.iandcode.framework.mvp;
+package com.debug.framework.mvp;
 
 import android.app.Activity;
 import android.content.Intent;

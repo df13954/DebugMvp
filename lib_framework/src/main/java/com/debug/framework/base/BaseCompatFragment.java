@@ -1,4 +1,4 @@
-package com.iandcode.framework.base;
+package com.debug.framework.base;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -8,9 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
-import com.iandcode.framework.R;
+import com.debug.framework.R;
 import com.ns.yc.ycstatelib.StateLayoutManager;
 
 

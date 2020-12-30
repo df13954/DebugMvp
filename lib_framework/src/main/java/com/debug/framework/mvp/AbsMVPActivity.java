@@ -1,11 +1,11 @@
-package com.iandcode.framework.mvp;
+package com.debug.framework.mvp;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
-import com.iandcode.framework.base.BaseActivity;
+import com.debug.framework.base.BaseActivity;
 
 
 public abstract class AbsMVPActivity<P extends IBasePresenter> extends BaseActivity

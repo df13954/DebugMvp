@@ -1,4 +1,4 @@
-package com.iandcode.framework;
+package com.debug.framework;
 
 import org.junit.Test;
 

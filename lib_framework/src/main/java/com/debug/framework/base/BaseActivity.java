@@ -1,13 +1,12 @@
-package com.iandcode.framework.base;
+package com.debug.framework.base;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
-import com.iandcode.framework.R;
+import com.debug.framework.R;
 import com.ns.yc.ycstatelib.StateLayoutManager;
 
 

@@ -1,4 +1,4 @@
-package com.iandcode.framework.mvp;
+package com.debug.framework.mvp;
 
 
 public abstract class AbsModel implements IBaseModel {

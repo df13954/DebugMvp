@@ -1,4 +1,4 @@
-package com.iandcode.framework.mvp;
+package com.debug.framework.mvp;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 
-import com.iandcode.framework.base.BaseCompatFragment;
+import com.debug.framework.base.BaseCompatFragment;
 
 
 public abstract class AbsMVPCompatFragment<P extends IBasePresenter> extends BaseCompatFragment
