@@ -1,0 +1,424 @@
+dependencies {
+    /* readme *
+    *
+    * 为了统一管理插件/依赖库版本，避免版本冲突，统一将插件/依赖库信息配置在此文件中，
+    * 通过 gradlew updateDependencies task
+    * 解析此文件生成对应内容到 Deps.groovy 中进行统一引用
+    *
+    * <version> </version> 之间是一些版本的配置 ，解析后会放到 Deps.groovy 的 interface Versions 中
+    *
+    * <plugin> </plugin> 之间是插件引用路径 ，直接同步到项目根目录 build.gradle 中
+    *
+    * <dep> </dep> 之间是依赖库引用路径 ，解析后会放到 Deps.groovy 的 interface Deps 中
+    *
+    * 更新配置后执行以下方法同步更新到 Deps.groovy：
+    *  方法一：在控制台执行：gradlew updateDependencies
+    *  方法二：在右侧 gradle 面板找到 task:updateDependencies 双击执行。
+    */
+
+    /**
+     * version 部分
+     *
+     * 版本配置格式：def <name> = <value>
+     */
+
+    /*<version>*/
+    def applicationId = 'com.android.debugmvp'
+    def buildTool = '30.0.2'
+    def minSdk = 23
+    def targetSdk = 30
+    def compileSdk = 30
+    def appVersionCode = 1
+    def appVersionName = '1.0.0'
+
+    /*</version>*/
+
+
+    /**
+     * 插件路径部分
+     * 配置插件引用路径时以 implementation 作为开头
+     */
+
+    /*<plugin>*/
+
+    implementation 'com.android.tools.build:gradle:4.0.1'
+    implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
+    implementation 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+    implementation 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    //https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md
+    implementation 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.17'
+
+    /*</plugin>*/
+
+
+    /**
+     * 依赖库路径部分
+     * 配置依赖库引用路径时以 implementation 作为开头
+     * 配置依赖库引用路径前备注格式： //<依赖库名> : <备注>，这个部分会被解析确定依赖库引用名称
+     */
+
+    /*<dep>*/
+
+    /*
+     * test
+     */
+    //junit
+    implementation 'junit:junit:4.12'
+    //runner
+    implementation 'androidx.test:runner:1.2.0'
+    //espresso
+    implementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    /*
+     * support
+     */
+    //appcompat
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    //supportV4
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //fragment
+    implementation 'androidx.fragment:fragment:1.2.5'
+    //supportCoreUtils
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+    //annotations
+    implementation 'androidx.annotation:annotation:1.1.0'
+    //design
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    //cardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //recyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    //transition
+    implementation 'androidx.transition:transition:1.3.1'
+    //constraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //multiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+    //coreKtx
+    implementation 'androidx.core:core-ktx:1.3.1'
+
+    /*
+     * room
+     */
+    //roomRuntime
+    implementation 'androidx.room:room-runtime:2.2.5'
+    //roomCompiler
+    implementation 'androidx.room:room-compiler:2.2.5'
+    //roomRxJava2
+    implementation 'androidx.room:room-rxjava2:2.2.5'
+    //roomTesting
+    implementation 'androidx.room:room-testing:2.2.5'
+
+    /*
+     * lifecycle
+     */
+    //viewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    //liveData
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+    //lifecycleRuntime : no view model or live data
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    //lifecycleCommonJava8 : if using Java8, use the following instead of compiler
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    //lifecycleReactiveStreams : ReactiveStreams support for LiveData
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.2.0'
+
+
+    //lifecycleViewModelSavedState :ViewModel新出的状态保存库
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
+    //viewModelKtx :alternatively - just ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    //liveDataKtx :alternatively - just LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    //lifecycleRunntimeKtx : alternatively - Lifecycles only (no ViewModel or LiveData)
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    //lifecycleReactivestreamsKtx : optional - ReactiveStreams support for LiveData
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0'
+
+
+    /*
+    * navigation
+    * */
+    //navigationSafeArgsGradlePlugin : classpath
+    implementation 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0'
+    //navigationFragmentKtx
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    //navigationUIKtx
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+
+    /*
+     * google
+     */
+    //pagingRuntime
+    implementation 'androidx.paging:paging-runtime:2.1.2'
+
+    //playServicesAd
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+    //googleService
+    implementation 'com.google.gms:google-services:4.3.3'
+    //flexBox : https://github.com/google/flexbox-layout
+    implementation 'com.google.android:flexbox:2.0.0'
+    //gson : https://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //kotlinAndroidExtensions :插件
+    implementation 'org.jetbrains.kotlin:kotlin-android-extensions:1.4.10'
+    //kotlinStdlib
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
+    //kotlinStdlibJdk7
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10'
+    //kotlinStdlibJdk8
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10'
+    //kotlinXCoroutinesAndroid
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+    //kotlinXCoroutinesCore
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
+    //kotlinReflect
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.3.71'
+
+    /*
+     * 模块化框架
+     */
+    //appJoint : https://github.com/PrototypeZ/AppJoint/blob/master/README_zh.md
+    implementation 'io.github.prototypez:app-joint:1.7'
+    //appJointCore
+    implementation 'io.github.prototypez:app-joint-core:1.7'
+
+    /*
+     * 网络
+     */
+    //okHttp3 : https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.0.0'
+    //okHttp3LoggingInterceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.0'
+
+    /*
+     * retrofit2
+     */
+    //retrofit2 : https://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    //retrofit2ConverterGson
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    //retrofit2ConverterScalars
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    //retrofit2AdapterRxJava2
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+
+    //retrofitUrlManager : https://github.com/JessYanCoding/RetrofitUrlManager
+    implementation 'me.jessyan:retrofit-url-manager:1.4.0'
+
+    /*
+     * 路由
+     */
+    //aRouterApi : https://github.com/alibaba/ARouter
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    //aRouterCompiler
+    implementation 'com.alibaba:arouter-compiler:1.2.2'
+
+    /*
+     * 图片加载
+     */
+    //picasso : https://github.com/square/picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //glideV4 : https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //glideV4Compiler
+    implementation 'com.github.bumptech.glide:compiler:4.9.0'
+
+    /*
+     * 事件总线
+     */
+    //eventBus : https://github.com/greenrobot/EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //liveEventBus : https://github.com/JeremyLiao/LiveEventBus
+    implementation 'com.jeremyliao:live-event-bus:1.4.0'
+
+    /*
+     * bug反馈
+     */
+    //bugly
+    implementation 'com.tencent.bugly:crashreport:3.1.0'
+    //buglyUpgrade : https://bugly.qq.com/docs/user-guide/instruction-manual-android-upgrade/?v=20200203205953
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.2'
+
+    /*
+     * 自定义view
+     */
+    //discreteScrollview : https://github.com/yarolegovich/DiscreteScrollView
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+    //easySwipeMenuLayout : https://github.com/anzaizai/EasySwipeMenuLayout
+    implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'
+    //swipeDelMenuLayout :侧滑删除 https://github.com/mcxtzhang/SwipeDelMenuLayout/blob/master/README-cn.md
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+
+    //pageIndicatorView : https://github.com/romandanylyk/PageIndicatorView
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    //swipeBack
+    implementation 'n.simonlee.widget:swipeback:1.0.15'
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    //viewPagerTransforms
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    //circleImageView : https://github.com/hdodenhof/CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    //roundedImageView :圆角图片 https://github.com/vinc3m1/RoundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //lRecyclerView
+    implementation 'com.github.jdsjlzx:LRecyclerView:1.5.4.3'
+    //photoView : https://github.com/chrisbanes/PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.2.0'
+    //gifDrawable : https://github.com/koral--/android-gif-drawable
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
+    //androidPickerView : 时间,地址选择器 https://github.com/Bigkoo/Android-PickerView
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    //baseRecyclerViewAdapterHelper : recycleView相关 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    //numberPickerView : https://github.com/Carbs0126/NumberPickerView
+    implementation 'n.carbswang.android:NumberPickerView:1.1.1'
+    //swipeBackLayout :侧滑退出 https://github.com/ikew0ng/SwipeBackLayout
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+    //switchButton : https://github.com/kyleduo/SwitchButton
+    implementation 'com.kyleduo.switchbutton:library:2.0.0'
+    //NiceImageView
+    implementation 'com.github.SheHuan:NiceImageView:1.0.5'
+    //indicatorSeekBar :进度条 带顶部气泡 https://github.com/warkiz/IndicatorSeekBar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.0'
+    //SideMenu : https://github.com/Yalantis/Side-Menu.Android
+    implementation 'com.github.yalantis:Side-Menu.Android:1.0.2'
+    //CircularReveal : https://github.com/ozodrukh/CircularReveal
+    implementation 'com.github.ozodrukh:CircularReveal:2.1.0@aar'
+    //FloatMenu : https://github.com/crosg/FloatMenuSample
+    implementation 'com.yw.game.floatmenu:FloatMenu:2.0.1'
+
+    /*
+     * 动画
+     */
+    //transitionsEverywhere : https://github.com/andkulikov/Transitions-Everywhere
+    implementation 'com.andkulikov:transitionseverywhere:1.8.0'
+
+    /*
+     * 权限
+     */
+    //andPermission : https://github.com/yanzhenjie/AndPermission
+    implementation 'com.yanzhenjie:permission:2.0.0-rc5'
+
+    /*
+     * 实用
+     */
+    //butterKnife : https://github.com/JakeWharton/butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    //butterKnifeCompiler
+    implementation 'com.jakewharton:butterknife-compiler:8.8.1'
+    //butterKnifeGradlePlugin
+    implementation 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+
+    //rxJava2 : https://github.com/ReactiveX/RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+    //rxAndroid
+    implementation 'io.reactivex:rxandroid:1.0.1'
+    //rxAndroid2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //rxLifecycle : https://github.com/trello/RxLifecycle
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+    //rxLifecycleComponents
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    //rxLifecycleNavi
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-navi:2.2.2'
+
+    //oneDrawable : https://github.com/maoruibin/OneDrawable
+    implementation 'com.github.maoruibin:OneDrawable:1.1.0'
+
+    //xutils
+    implementation 'org.xutils:xutils:3.5.0'
+    //utilCode
+    implementation 'com.blankj:utilcodex:1.23.7'
+    //httpCore
+    implementation 'org.apache.httpcomponents:httpcore:4.4.10'
+    //zxing
+    implementation 'com.google.zxing:core:3.3.3'
+    //logger
+    implementation 'com.orhanobut:logger:1.15'
+
+    //rxBinding
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    //rxBindingAppcompatV7
+    implementation 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.3.0'
+    //rxBindingDesign
+    implementation 'com.jakewharton.rxbinding:rxbinding-design:0.3.0'
+
+    //greenDao
+    implementation 'de.greenrobot:greendao:2.0.0'
+    //mmkv : 基于mmap的高性能通用key-value组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
+    implementation 'com.tencent:mmkv-static:1.2.2'
+
+    //javaxAnnotation
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+    //dagger
+    implementation 'com.google.dagger:dagger:2.23.2'
+    //daggerCompiler
+    implementation 'com.google.dagger:dagger-compiler:2.23.2'
+
+    // fgchecker
+    implementation 'com.rvalerio:fgchecker:1.1.0'
+
+    //BroadcastReceiver : https://github.com/cbfg5210/BroadcastReceiver
+    implementation 'com.github.cbfg5210:BroadcastReceiver:0.6'
+    //BRecyclerAdapter : https://github.com/cbfg5210/BRecyclerAdapter
+    implementation 'com.github.cbfg5210:BRecyclerAdapter:0.6'
+    //BaseDialog : https://github.com/cbfg5210/BaseDialog
+    implementation 'com.github.cbfg5210:BaseDialog:0.1'
+    //BUtil : https://github.com/cbfg5210/BUtil
+    implementation 'com.github.cbfg5210:BUtil:0.4'
+
+    //AutoSize : https://github.com/JessYanCoding/AndroidAutoSize
+    implementation 'me.jessyan:autosize:1.2.0'
+
+    //CrashX : https://github.com/TutorialsAndroid/crashx
+    implementation 'com.github.TutorialsAndroid:crashx:v4.0.19'
+    //FitAndroid8 : Android 7/8 FileProvider适配 https://github.com/steven2947/FitAndroid8
+    implementation 'com.github.steven2947:FitAndroid8:0.5.0'
+
+    /*
+     * 插件
+     */
+    //saveState : https://github.com/PrototypeZ/SaveState
+    implementation 'io.github.prototypez:save-state:0.2.3'
+
+    /*
+    * 测试工具
+    */
+    //stetho : https://github.com/facebook/stetho
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    //stethoOkHttp3
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    //stethoUrlConnection
+    implementation 'com.facebook.stetho:stetho-urlconnection:1.5.0'
+
+    //leakCanaryAndroid : https://github.com/square/leakcanary
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    //leakCanaryAndroidNoOp
+    implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    //leakCanarySupportFragment
+    implementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+
+    //blockCanaryAndroid :卡顿监控和提示 https://github.com/markzhai/AndroidPerformanceMonitor
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+
+    //crashwoodpecker
+    implementation 'me.drakeet.library:crashwoodpecker:2.1.1'
+
+    //debugDb
+    implementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    //rxAndroidBle : https://github.com/Polidea/RxAndroidBle
+    implementation 'com.polidea.rxandroidble2:rxandroidble:1.9.0'
+    //ble : https://github.com/xiaoyaoyou1212/BLE
+    implementation 'com.vise.xiaoyaoyou:baseble:2.0.5'
+
+    /*</dep>*/
+
+
+}

@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
+    }
+}
+
+plugins {
+    id 'plugin.version' apply true
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+    logger.error("project = $project,plugins = ${project.plugins}")
+    //输出的 log 中没有 plugin.version
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

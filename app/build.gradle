@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+logger.error("plugins = ${plugins}")
+//输出的 log 中没有 plugin.version
+def buildTimes() {
+    return new Date().format("yyyyMMdd")
+}
+
+android {
+
+    signingConfigs {
+        release {
+            storeFile file('../android_sign.jks')
+            storePassword 'debugAndroid'
+            keyAlias = 'debug'
+            keyPassword 'debugAndroid'
+        }
+    }
+
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        applicationId Versions.applicationId
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.compileSdk
+        versionCode Versions.appVersionCode
+        versionName Versions.appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    // Temporary fix until alpha10
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/*.kotlin_module'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+        applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (output.outputFile == null && !output.outputFile.name.endsWith('.apk')) {
+                contiue
+            }
+
+            def info = ""
+
+            // 因为维度存在，所以一个 variant 可能由有一个以上的 Flavor 交叉组成，所以这里 Flavor 名也是复数的
+            variant.productFlavors.each {
+                info = info + it.name + "_"
+            }
+
+            println("TAG:${variant.name}/${info}")
+            if ('release' == variant.buildType.name) {
+                outputFileName = info + variant.buildType.name + '_v_' + variant.versionName + '_' + variant.versionCode + '_' + buildTimes() + '.apk'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Deps.appcompat
+    implementation Deps.constraintLayout
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
