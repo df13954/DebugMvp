@@ -96,6 +96,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     //coreKtx
     implementation 'androidx.core:core-ktx:1.3.2'
+    //core
+    implementation 'androidx.core:core:1.3.2'
 
     /*
      * room
@@ -319,6 +321,8 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
     //rxLifecycleNavi
     implementation 'com.trello.rxlifecycle2:rxlifecycle-navi:2.2.2'
+    //lifecycleExtensions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     //oneDrawable : https://github.com/maoruibin/OneDrawable
     implementation 'com.github.maoruibin:OneDrawable:1.1.0'

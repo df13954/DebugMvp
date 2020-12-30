@@ -52,6 +52,8 @@ interface Deps {
     String multiDex = 'androidx.multidex:multidex:2.0.1'
     //coreKtx
     String coreKtx = 'androidx.core:core-ktx:1.3.2'
+    //core
+    String core = 'androidx.core:core:1.3.2'
 
     /*
      * room
@@ -275,6 +277,8 @@ interface Deps {
     String rxLifecycleComponents = 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
     //rxLifecycleNavi
     String rxLifecycleNavi = 'com.trello.rxlifecycle2:rxlifecycle-navi:2.2.2'
+    //lifecycleExtensions
+    String lifecycleExtensions = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     //oneDrawable : https://github.com/maoruibin/OneDrawable
     String oneDrawable = 'com.github.maoruibin:OneDrawable:1.1.0'

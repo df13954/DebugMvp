@@ -128,7 +128,7 @@ class VersionPlugin implements Plugin<Project> {
                     writer.flush()
                 })
 
-                logger.error("插件/依赖信息同步完成!")
+                logger.error("dependencies copy completed !")
             }
         }
     }

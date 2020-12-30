@@ -1,0 +1,35 @@
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':lib_state_layout')
+    implementation Deps.appcompat
+    implementation Deps.design
+    implementation Deps.recyclerView
+    implementation Deps.cardView
+    implementation Deps.core
+    implementation Deps.constraintLayout
+    implementation Deps.lifecycleExtensions
+}
