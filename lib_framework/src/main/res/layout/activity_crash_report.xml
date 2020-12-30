@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.e.lib_base.crash.CrashReportActivity">
+    tools:context="com.debug.base.crash.CrashReportActivity">
 
     <TextView
         android:id="@+id/toolBar"
