@@ -30,7 +30,7 @@ import sj.mblog.LL
 abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
 
     protected var TAG: String = javaClass.simpleName
-    protected var mContext: Activity? = null
+    protected lateinit var mContext: Activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,39 +60,6 @@ abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
     protected fun applyEdges(): Boolean {
         return false
     }
-
-    // override fun initStatusLayout(): StateLayoutManager {
-    //     //这个配置,可以直接在base中构建.默认配置.当有需要的时候,子类可以重新new config覆盖
-    //     //这里,可以设置网络,也可以重新请求数据等业务
-    //     mStatusLayoutManager = StateLayoutManager.newBuilder(this)
-    //             .contentView(layoutId)
-    //             .emptyDataView(emptyLayout) //也可以是app模块自己定制
-    //             .errorView(errorLayout)
-    //             .loadingView(loadingLayout)
-    //             .netWorkErrorView(netWorkLayout)
-    //             .onRetryListener { onRefreshClick() }
-    //             .onNetworkListener { onNetworkClick() }
-    //             .build()
-    //     mStatusLayoutManager.showContent()
-    //     return mStatusLayoutManager
-    // }
-
-    /**
-     * 子类如果需要更改空页面布局,直接复写方法,下面几个方法同理
-     *
-     * @return getEmptyLayout
-     */
-    protected val emptyLayout: Int
-        protected get() = R.layout.activity_emptydata
-
-    protected val errorLayout: Int
-        protected get() = R.layout.activity_error
-
-    protected val loadingLayout: Int
-        protected get() = R.layout.activity_loading
-
-    protected val netWorkLayout: Int
-        protected get() = R.layout.activity_networkerror
 
     /**
      * 我们页面布局
