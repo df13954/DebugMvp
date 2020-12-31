@@ -415,7 +415,16 @@ dependencies {
     //ble : https://github.com/xiaoyaoyou1212/BLE
     implementation 'com.vise.xiaoyaoyou:baseble:2.0.5'
 
+    //binding
+    implementation 'com.hi-dhl:binding:1.0.7'
+
+    //autodispose
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents:0.8.0'
+
+    //adapterCymChad
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     /*</dep>*/
+
 
 
 }

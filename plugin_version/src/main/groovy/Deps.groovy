@@ -370,4 +370,13 @@ interface Deps {
     String rxAndroidBle = 'com.polidea.rxandroidble2:rxandroidble:1.9.0'
     //ble : https://github.com/xiaoyaoyou1212/BLE
     String ble = 'com.vise.xiaoyaoyou:baseble:2.0.5'
+
+    //binding
+    String binding = 'com.hi-dhl:binding:1.0.7'
+
+    //autodispose
+    String autodispose = 'com.uber.autodispose:autodispose-android-archcomponents:0.8.0'
+
+    //adapterCymChad
+    String adapterCymChad = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 }

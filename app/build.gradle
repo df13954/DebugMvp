@@ -9,6 +9,10 @@ def buildTimes() {
 }
 
 android {
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 
     signingConfigs {
         release {
@@ -37,9 +41,13 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "APP_BASE_URL", "\"http://moonlightshadow.cn:2020\"")
+
         }
         debug {
             signingConfig signingConfigs.release
+            buildConfigField("String", "APP_BASE_URL", "\"http://moonlightshadow.cn:2020\"")
+
         }
     }
     compileOptions {
@@ -93,9 +101,21 @@ dependencies {
     implementation project(path: ':lib_state_layout')
     implementation project(path: ':lib_log_format')
     implementation project(path: ':lib_base')
+    implementation project(path: ':lib_framework')
 
     implementation Deps.appcompat
     implementation Deps.constraintLayout
+    implementation Deps.binding
+    implementation Deps.eventBus
+    implementation Deps.retrofit2
+    implementation Deps.retrofit2AdapterRxJava2
+    implementation Deps.okHttp3LoggingInterceptor
+    implementation Deps.retrofit2ConverterGson
+    implementation Deps.autodispose
+    implementation Deps.rxAndroid2
+    implementation Deps.adapterCymChad
+    implementation Deps.glideV4
+    implementation Deps.glideV4Compiler
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

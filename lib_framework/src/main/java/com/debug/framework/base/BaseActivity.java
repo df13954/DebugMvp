@@ -1,8 +1,10 @@
 package com.debug.framework.base;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
@@ -24,16 +26,16 @@ public abstract class BaseActivity extends AppCompatActivity {
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         //所有act的父布局
-        setContentView(R.layout.activity_base_view);
-        mStatusLayoutManager = initStatusLayout();//子类需要构造一个管理器
+        //setContentView(getLayoutId());
+        //mStatusLayoutManager = initStatusLayout();//子类需要构造一个管理器
         initBaseView();
 
     }
+    // public abstract int getLayoutId();
 
     protected abstract boolean isFullScreen();
 
-    protected abstract StateLayoutManager initStatusLayout();
-
+    // protected abstract StateLayoutManager initStatusLayout();
 
 
     protected abstract void onRefreshClick();
