@@ -29,8 +29,8 @@ import sj.mblog.LL
  */
 abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
 
-    protected var TAG: String = javaClass.simpleName
-    protected lateinit var mContext: Activity
+    var TAG: String = javaClass.simpleName
+    lateinit var mContext: Activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,11 +53,11 @@ abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
 
     protected abstract fun initView()
 
-    protected fun registerEventBus(): Boolean {
+    open fun registerEventBus(): Boolean {
         return false
     }
 
-    protected fun applyEdges(): Boolean {
+    open fun applyEdges(): Boolean {
         return false
     }
 

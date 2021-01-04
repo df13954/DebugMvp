@@ -61,11 +61,6 @@ public abstract class AbsMVPActivity<P extends IBasePresenter> extends BaseActiv
      */
     protected abstract P createPresenter();
 
-
-    protected void initView(Bundle savedInstanceState) {
-
-    }
-
     protected void initData(Intent intent) {
 
     }
