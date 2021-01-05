@@ -3,8 +3,10 @@ package com.debug.framework.mvp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import android.view.View;
 
 import com.debug.framework.base.BaseCompatFragment;
@@ -17,7 +19,14 @@ public abstract class AbsMVPCompatFragment<P extends IBasePresenter> extends Bas
 
     @Override
     public Activity getAct() {
+
         return this.getActivity();
+    }
+
+    @Override
+    public void startAct(Class clazz) {
+        Intent intent = new Intent(getContext(), clazz);
+        startActivity(intent);
     }
 
     @Override
@@ -74,25 +83,6 @@ public abstract class AbsMVPCompatFragment<P extends IBasePresenter> extends Bas
 
     }
 
-    @Override
-    public void showNoNetworkView() {
-        showNetWorkError();
-    }
-
-    @Override
-    public void showErrorView() {
-        showError();
-    }
-
-    @Override
-    public void showContentView() {
-        showContent();
-    }
-
-    @Override
-    public void showLoadingView() {
-        showLoading();
-    }
 
     @Override
     protected void onRefreshClick() {

@@ -10,25 +10,11 @@ import android.content.Intent;
  */
 public interface IBaseView {
 
-
-    //以下几个view配置状态布局操作的.
-
-    //显示无网络状态
-    void showNoNetworkView();
-
-    //错误
-    void showErrorView();
-
-    //我们业务的内容
-    void showContentView();
-
-    //加载中页面
-    void showLoadingView();
-
-
     Activity getAct();
 
     void startToActivity(Intent intent);
+
+    void startAct(Class clazz);
 
     void showToast(String msg);
 

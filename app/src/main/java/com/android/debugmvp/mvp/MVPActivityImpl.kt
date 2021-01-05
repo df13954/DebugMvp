@@ -18,7 +18,6 @@ import com.android.debugmvp.R
 import com.debug.framework.mvp.AbsMVPActivity
 import com.debug.framework.mvp.IBasePresenter
 import com.hi.dhl.binding.viewbind
-import com.ns.yc.ycstatelib.StateLayoutManager
 import org.greenrobot.eventbus.EventBus
 import sj.mblog.LL
 
@@ -151,10 +150,6 @@ abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
         } else {
             null
         }
-    }
-
-    public override fun showLoading() {
-        //WaitDialog.show(this, "请稍候...");
     }
 
     fun dismissLoading() {

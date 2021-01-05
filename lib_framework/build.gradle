@@ -24,7 +24,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(path: ':lib_state_layout')
     implementation Deps.appcompat
     implementation Deps.design
     implementation Deps.recyclerView

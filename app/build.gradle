@@ -98,7 +98,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation project(path: ':lib_sw')
-    implementation project(path: ':lib_state_layout')
     implementation project(path: ':lib_log_format')
     implementation project(path: ':lib_base')
     implementation project(path: ':lib_framework')
@@ -116,6 +115,7 @@ dependencies {
     implementation Deps.adapterCymChad
     implementation Deps.glideV4
     implementation Deps.glideV4Compiler
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

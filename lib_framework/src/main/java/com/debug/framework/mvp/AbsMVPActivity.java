@@ -3,6 +3,7 @@ package com.debug.framework.mvp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 
 import com.debug.framework.base.BaseActivity;
@@ -23,6 +24,12 @@ public abstract class AbsMVPActivity<P extends IBasePresenter> extends BaseActiv
         if (intent == null) {
             throw new NullPointerException("intent 不能为空");
         }
+        startActivity(intent);
+    }
+
+    @Override
+    public void startAct(Class clazz) {
+        Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }
 
@@ -62,36 +69,6 @@ public abstract class AbsMVPActivity<P extends IBasePresenter> extends BaseActiv
     protected abstract P createPresenter();
 
     protected void initData(Intent intent) {
-
-    }
-
-    @Override
-    public void showNoNetworkView() {
-        showNetWorkError();
-    }
-
-    @Override
-    public void showErrorView() {
-        showError();
-    }
-
-    @Override
-    public void showContentView() {
-        showContent();
-    }
-
-    @Override
-    public void showLoadingView() {
-        showLoading();
-    }
-
-    @Override
-    protected void onRefreshClick() {
-
-    }
-
-    @Override
-    protected void onNetworkClick() {
 
     }
 }

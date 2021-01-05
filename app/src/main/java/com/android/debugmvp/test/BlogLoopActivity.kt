@@ -14,7 +14,6 @@ import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.debug.framework.mvp.IBaseView
 import com.hi.dhl.binding.viewbind
-import com.ns.yc.ycstatelib.StateLayoutManager
 
 class BlogLoopActivity : MVPActivityImpl<SobLoopPresenter>(), SobLoopContract.View {
 
