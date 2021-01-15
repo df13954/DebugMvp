@@ -1,18 +1,16 @@
 package com.android.debugmvp.test
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.debugmvp.R
 import com.android.debugmvp.bean.SobLoop
 import com.android.debugmvp.databinding.FragmentBlankBinding
 import com.android.debugmvp.test.adapter.LoopAdapter
 import com.android.debugmvp.test.contract.SobLoopContract
 import com.android.debugmvp.test.presenter.SobLoopPresenter
-import com.debug.base.MvpFragmentImp
+import com.android.debugmvp.mvp.MvpFragmentImp
 import com.hi.dhl.binding.viewbind
 
 private const val ARG_PARAM1 = "param1"
@@ -47,7 +45,7 @@ class BlankFragment : MvpFragmentImp<SobLoopPresenter>(), SobLoopContract.View {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         return binding.root
     }
 

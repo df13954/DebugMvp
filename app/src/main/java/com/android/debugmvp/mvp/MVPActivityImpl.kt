@@ -24,7 +24,7 @@ import sj.mblog.LL
 /**
  * @author dr
  * @date 2020-05-22
- * @description 如果需要增加公用方法, 可以在这里增加, 比如是否需要自由配置错误页面, 或者空页面, 后面扩展
+ * @description 如果需要增加公用方法, 可以在这里增加
  */
 abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
 
@@ -60,11 +60,6 @@ abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
         return false
     }
 
-    /**
-     * 我们页面布局
-     *
-     * @return
-     */
     override fun onDestroy() {
         super.onDestroy()
         LL.i(TAG, "onDestroy: ->>>")
@@ -161,7 +156,7 @@ abstract class MVPActivityImpl<P : IBasePresenter<*>> : AbsMVPActivity<P>() {
     }
 
     protected val isActive: Boolean
-        protected get() = lifecycle.currentState != Lifecycle.State.DESTROYED
+        get() = lifecycle.currentState != Lifecycle.State.DESTROYED
 
     protected fun <T : View?> find(viewId: Int): T {
         return findViewById<View>(viewId) as T
