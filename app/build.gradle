@@ -116,6 +116,7 @@ dependencies {
     implementation Deps.glideV4
     implementation Deps.glideV4Compiler
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':lib_common_utils')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
