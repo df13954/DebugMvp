@@ -8,9 +8,18 @@
     tools:context=".test.BlogLoopActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#ccf"
         android:text="获取轮播图页面" />
+
+    <TextView
+        android:id="@+id/tv_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="sub获取轮播图页面" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_loop"

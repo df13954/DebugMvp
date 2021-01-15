@@ -1,18 +1,14 @@
 package com.android.debugmvp.test
 
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.debugmvp.R
 import com.android.debugmvp.bean.SobLoop
 import com.android.debugmvp.databinding.ActivityBlogLoopBinding
 import com.android.debugmvp.mvp.MVPActivityImpl
 import com.android.debugmvp.test.adapter.LoopAdapter
 import com.android.debugmvp.test.contract.SobLoopContract
 import com.android.debugmvp.test.presenter.SobLoopPresenter
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.listener.OnItemClickListener
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.debug.framework.mvp.IBaseView
+import com.android.lib.common.utils.dp
+import com.debug.base.utils.AppDeviceUtils
 import com.hi.dhl.binding.viewbind
 
 class BlogLoopActivity : MVPActivityImpl<SobLoopPresenter>(), SobLoopContract.View {
@@ -25,6 +21,8 @@ class BlogLoopActivity : MVPActivityImpl<SobLoopPresenter>(), SobLoopContract.Vi
     }
 
     override fun initView() {
+        binding.tvTitle.width = AppDeviceUtils.dip2px(this, 150f)
+        binding.tvSubTitle.width = 150.dp.toInt()
         //adapter
         loopAdapter = LoopAdapter()
         binding.rvLoop.layoutManager = LinearLayoutManager(this)
