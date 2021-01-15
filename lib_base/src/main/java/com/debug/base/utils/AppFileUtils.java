@@ -23,7 +23,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 
-public class AppFileUtil {
+public class AppFileUtils {
 
     private static final String[] imageExts = new String[]{"jpg", "png", "jpeg", "gif", "bmp"};
 

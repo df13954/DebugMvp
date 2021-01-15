@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @date: 2020/9/5
  * @description 处理数字工具$
  */
-public class AppMath {
+public class AppMathUtils {
     public static float getBigDecimalScale(float num,int scale) {
         BigDecimal bigDecimal = new BigDecimal(num);
         return bigDecimal.setScale(scale, BigDecimal.ROUND_HALF_UP).floatValue();

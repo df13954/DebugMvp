@@ -10,7 +10,7 @@ import android.text.TextUtils;
 
 import com.debug.base.crash.CrashHandler;
 import com.debug.base.crash.CrashUtil;
-import com.debug.base.utils.AppDeviceUtil;
+import com.debug.base.utils.AppDeviceUtils;
 
 import java.io.File;
 
@@ -29,7 +29,7 @@ public class BaseApplication extends Application {
         instance = this;
         if (FrameworkConfig.getCrashConfig().crashCatch) {
             if (!(Thread.getDefaultUncaughtExceptionHandler() instanceof CrashHandler)) {
-                String processName = AppDeviceUtil.getProcessName(Process.myPid());
+                String processName = AppDeviceUtils.getProcessName(Process.myPid());
                 if (!TextUtils.isEmpty(processName)) {
                     int i = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
                     if (i == PackageManager.PERMISSION_GRANTED) {

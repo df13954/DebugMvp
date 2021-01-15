@@ -38,8 +38,8 @@ public class PadUtils {
     }
 
     public static String getScreenScale(Context context) {
-        int width = AppDeviceUtil.getWidth(context);
-        int height = AppDeviceUtil.getHeight(context);
+        int width = AppDeviceUtils.getWidth(context);
+        int height = AppDeviceUtils.getHeight(context);
         int divisor = commonDivisor(width, height);
         int w = width / divisor;
         int h = height / divisor;

@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 
-public class AppDeviceUtil {
+public class AppDeviceUtils {
     private static int WIDTH;
     private static int HEIGHT;
     private static float DENSITY;

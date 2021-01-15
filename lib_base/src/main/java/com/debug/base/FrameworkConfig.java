@@ -28,9 +28,9 @@ public class FrameworkConfig {
 
     public static class CrashLogConfig {
 
-        public boolean crashCatch = false;
+        public boolean crashCatch = true;
 
-        public boolean showCrashUI = false;
+        public boolean showCrashUI = true;
 
         public long crashFileMaxSize = 10 * 1000 * 1000;
 

@@ -83,11 +83,11 @@ public class StatusBarUtil {
         } else if (sdkInt >= Build.VERSION_CODES.LOLLIPOP) {
             window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            if (RomUtil.isFlyme()) {
+            if (RomUtils.isFlyme()) {
                 if (!setFlymeStatusBarLightMode(activity, isDarkFont)) {
                     window.setStatusBarColor(currentColor);
                 }
-            } else if (RomUtil.isMiui()) {
+            } else if (RomUtils.isMiui()) {
                 if (!setMIUIStatusBarLightMode(activity, isDarkFont)) {
                     window.setStatusBarColor(currentColor);
                 }

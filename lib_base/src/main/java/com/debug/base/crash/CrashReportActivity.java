@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.debug.base.R;
 import com.debug.base.utils.AppDateUtils;
-import com.debug.base.utils.AppDeviceUtil;
+import com.debug.base.utils.AppDeviceUtils;
 import com.debug.base.BaseApplication;
 
 import java.io.PrintWriter;
@@ -36,12 +36,12 @@ public class CrashReportActivity extends AppCompatActivity {
             stringBuilder
                     .append(AppDateUtils.getYMDHMSDate(System.currentTimeMillis())).append("\n")
                     .append("=======系统信息=======\n")
-                    .append(AppDeviceUtil.getDeviceBrand()).append("(").append(AppDeviceUtil.getDeviceModel()).append(")\n")
-                    .append(AppDeviceUtil.getDeviceBuildVersion()).append("\n");
-            String[] deviceAbis = AppDeviceUtil.getDeviceAbis();
+                    .append(AppDeviceUtils.getDeviceBrand()).append("(").append(AppDeviceUtils.getDeviceModel()).append(")\n")
+                    .append(AppDeviceUtils.getDeviceBuildVersion()).append("\n");
+            String[] deviceAbis = AppDeviceUtils.getDeviceAbis();
             if (deviceAbis != null) {
                 for (int i = 0; i < deviceAbis.length; i++) {
-                    stringBuilder.append("abi").append(i).append(": ").append(AppDeviceUtil.getDeviceAbi()).append("\n");
+                    stringBuilder.append("abi").append(i).append(": ").append(AppDeviceUtils.getDeviceAbi()).append("\n");
                 }
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

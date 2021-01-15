@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class RomUtil {
+public class RomUtils {
     private static final String TAG = "Rom";
 
     public static final String ROM_MIUI = "MIUI";

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.android.debugmvp.BuildConfig;
 import com.android.debugmvp.DebugApplication;
-import com.debug.base.utils.RomUtil;
+import com.debug.base.utils.RomUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -98,8 +98,8 @@ public class BlogClient implements ICreateRetrofitClient {
                     .addHeader("versionCode", BuildConfig.VERSION_CODE + "")
                     .addHeader("versionName", BuildConfig.VERSION_NAME)
                     .addHeader("packageName", BuildConfig.APPLICATION_ID)
-                    .addHeader("brand", RomUtil.getName())
-                    .addHeader("os", RomUtil.getSysVersion() + "");
+                    .addHeader("brand", RomUtils.getName())
+                    .addHeader("os", RomUtils.getSysVersion() + "");
             //.addHeader("device", PadUtils.getPlatform());
             return chain.proceed(builder.build());
         }
