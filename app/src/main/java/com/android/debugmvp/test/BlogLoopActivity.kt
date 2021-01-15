@@ -1,5 +1,6 @@
 package com.android.debugmvp.test
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.debugmvp.bean.SobLoop
 import com.android.debugmvp.databinding.ActivityBlogLoopBinding
@@ -8,6 +9,8 @@ import com.android.debugmvp.test.adapter.LoopAdapter
 import com.android.debugmvp.test.contract.SobLoopContract
 import com.android.debugmvp.test.presenter.SobLoopPresenter
 import com.android.lib.common.utils.dp
+import com.android.lib.common.utils.isBold
+import com.android.lib.common.utils.singleClick
 import com.debug.base.utils.AppDeviceUtils
 import com.hi.dhl.binding.viewbind
 
@@ -22,7 +25,14 @@ class BlogLoopActivity : MVPActivityImpl<SobLoopPresenter>(), SobLoopContract.Vi
 
     override fun initView() {
         binding.tvTitle.width = AppDeviceUtils.dip2px(this, 150f)
+        binding.tvTitle.isBold()
         binding.tvSubTitle.width = 150.dp.toInt()
+
+        binding.tvTitle.singleClick(1000){
+            Log.i(TAG, "click ${System.currentTimeMillis()}")
+        }
+
+
         //adapter
         loopAdapter = LoopAdapter()
         binding.rvLoop.layoutManager = LinearLayoutManager(this)
@@ -32,6 +42,8 @@ class BlogLoopActivity : MVPActivityImpl<SobLoopPresenter>(), SobLoopContract.Vi
             showToast("${item.title},url:${item.targetUrl}")
         }
         mPresenter?.httpGetSobLoop()
+
+
     }
 
     override fun displayLoop(loops: List<SobLoop>) {
