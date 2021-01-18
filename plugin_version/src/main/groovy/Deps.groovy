@@ -382,4 +382,7 @@ interface Deps {
 
     //adapterCymChad
     String adapterCymChad = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //toastLib
+    String toastLib = 'com.hjq:toast:8.8'
 }

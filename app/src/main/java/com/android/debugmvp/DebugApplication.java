@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.debug.base.BaseApplication;
+import com.hjq.toast.ToastUtils;
 
 /**
  * @author: 123
@@ -29,5 +30,7 @@ public class DebugApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         context = this;
+        //toast
+        ToastUtils.init(this);
     }
 }

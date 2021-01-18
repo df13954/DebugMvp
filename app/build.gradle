@@ -115,6 +115,7 @@ dependencies {
     implementation Deps.adapterCymChad
     implementation Deps.glideV4
     implementation Deps.glideV4Compiler
+    implementation Deps.toastLib
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':lib_common_utils')
 
