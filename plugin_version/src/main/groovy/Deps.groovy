@@ -55,6 +55,9 @@ interface Deps {
     //core
     String core = 'androidx.core:core:1.3.2'
 
+    //viewpager2
+    String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
+
     /*
      * room
      */
