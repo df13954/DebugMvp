@@ -305,9 +305,8 @@ dependencies {
     /*
      * 权限
      */
-    //andPermission : https://github.com/yanzhenjie/AndPermission
-    implementation 'com.yanzhenjie:permission:2.0.0-rc5'
-
+    //permissionLib
+    implementation 'com.hjq:xxpermissions:9.6'
     /*
      * 实用
      */

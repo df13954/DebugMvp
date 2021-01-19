@@ -116,8 +116,11 @@ dependencies {
     implementation Deps.glideV4
     implementation Deps.glideV4Compiler
     implementation Deps.toastLib
+    implementation Deps.permissionLib
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':lib_common_utils')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

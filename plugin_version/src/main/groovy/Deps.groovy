@@ -261,9 +261,8 @@ interface Deps {
     /*
      * 权限
      */
-    //andPermission : https://github.com/yanzhenjie/AndPermission
-    String andPermission = 'com.yanzhenjie:permission:2.0.0-rc5'
-
+    //permissionLib
+    String permissionLib = 'com.hjq:xxpermissions:9.6'
     /*
      * 实用
      */
