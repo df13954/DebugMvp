@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 logger.error("plugins = ${plugins}")
 //输出的 log 中没有 plugin.version
-def buildTimes() {
+static def buildTimes() {
     return new Date().format("yyyyMMdd")
 }
 
@@ -73,7 +72,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-        applicationVariants.all { variant ->
+    applicationVariants.all { variant ->
         variant.outputs.all { output ->
             if (output.outputFile == null && !output.outputFile.name.endsWith('.apk')) {
                 contiue
@@ -117,8 +116,9 @@ dependencies {
     implementation Deps.glideV4Compiler
     implementation Deps.toastLib
     implementation Deps.permissionLib
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':lib_common_utils')
+    //as 新建act的时候，都自动增加的依赖，暂时留着
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
