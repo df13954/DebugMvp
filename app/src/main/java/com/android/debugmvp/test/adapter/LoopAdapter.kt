@@ -20,6 +20,11 @@ class LoopAdapter : BaseQuickAdapter<SobLoop, BaseViewHolder>(R.layout.item_loop
         //         .into((holder.getView<View>(R.id.iv_loop_cover) as ImageView))
         //替换为lib的使用方式。+ 中间层
 
-        ImageHelper.load(holder.getView(R.id.iv_loop_cover), item.imageUrl)
+        ImageHelper.load(
+                holder.getView(R.id.iv_loop_cover),
+                item.imageUrl,
+                R.mipmap.ic_launcher,
+                R.mipmap.ic_launcher
+        )
     }
 }

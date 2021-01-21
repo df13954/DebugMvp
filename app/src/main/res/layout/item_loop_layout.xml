@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/sw_60dp"
-    android:background="?android:attr/selectableItemBackground"
-    >
+    android:background="?android:attr/selectableItemBackground">
 
 
-    <ImageView
+    <com.debug.widget.RadiusImageView
         android:id="@+id/iv_loop_cover"
         android:layout_width="@dimen/sw_40dp"
         android:layout_height="@dimen/sw_40dp"
@@ -17,6 +16,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:riv_border_color="#ff0000"
+        app:riv_border_width="@dimen/sw_1dp"
+        app:riv_corner_radius="@dimen/sw_4dp"
+
         tools:src="@mipmap/ic_launcher" />
 
     <TextView
