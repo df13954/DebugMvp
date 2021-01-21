@@ -4,7 +4,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.android.debugmvp.utils.GlideLoaderImp;
 import com.debug.base.BaseApplication;
+import com.debug.imageload.ImageLoader;
 import com.hjq.toast.ToastUtils;
 
 /**
@@ -32,5 +34,7 @@ public class DebugApplication extends BaseApplication {
         context = this;
         //toast
         ToastUtils.init(this);
+        //初始化glide 如果需要换其他，自行实现ILoaderStrategy
+        ImageLoader.getInstance().setGlobalImageLoader(new GlideLoaderImp());
     }
 }
