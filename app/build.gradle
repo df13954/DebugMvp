@@ -40,12 +40,12 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "APP_BASE_URL", "\"http://moonlightshadow.cn:2020\"")
+            buildConfigField("String", "APP_BASE_URL", "\"http://www.debuglive.cn:2020\"")
 
         }
         debug {
             signingConfig signingConfigs.release
-            buildConfigField("String", "APP_BASE_URL", "\"http://moonlightshadow.cn:2020\"")
+            buildConfigField("String", "APP_BASE_URL", "\"http://www.debuglive.cn:2020\"")
 
         }
     }
